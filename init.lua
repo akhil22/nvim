@@ -1,0 +1,2 @@
+require("uls")
+print("hello")
