@@ -8,8 +8,10 @@ vim.opt.expandtab = true
 
 vim.opt.wrap = false
 vim.opt.backup = false
-local is_windows = vim.fn.has("win32") or vim.fn.has("win64") or vim.fn.has("win16")
-if is_windows then
+local uname = vim.loop.os_uname()
+_G.IS_WINDOWS = uname.sysname:find 'Windows' and true or false
+if _G.IS_WINDOWS then
+    vim.g.undotree_DiffCommand = "FC"
     vim.opt.undodir = os.getenv("USERPROFILE") .. "/.vim/undodir"
 else
     vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
