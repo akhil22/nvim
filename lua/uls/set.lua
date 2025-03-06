@@ -13,6 +13,7 @@ if is_windows then
     vim.opt.undodir = os.getenv("USERPROFILE") .. "/.vim/undodir"
 else
     vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+end
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false
