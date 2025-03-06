@@ -50,8 +50,12 @@ require('lspconfig').pylsp.setup {
   cmd = { '/home/usl/anaconda3/envs/qw/bin/pylsp' },
   -- other settings...
 }
+require('lspconfig').clangd.setup({
+	cmd = {"clangd-12"},
+
+})
 vim.diagnostic.config({
-  virtual_text = false,   -- No inline warnings
+  virtual_text = true,   -- No inline warnings
   underline = false,
   float = { border = "rounded" }  -- Show in floating window on hover
 })

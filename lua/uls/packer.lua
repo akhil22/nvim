@@ -38,11 +38,19 @@ return require('packer').startup(function(use)
 	  end,
   })
   use {
-  'folke/zen-mode.nvim',
-  config = function()
-    require("zenmode")  -- Load configuration from lua/config/zen.lua
-  end
-}
+	  'folke/zen-mode.nvim',
+	  config = function()
+		  require("zenmode")  -- Load configuration from lua/config/zen.lua
+	  end
+  }
+  use ({
+	  'nvimdev/lspsaga.nvim',
+	  after = 'nvim-lspconfig',
+	  config = function()
+		  require('lspsaga').setup({})
+	  end,
+  })
+
 
 end)
 
