@@ -1,3 +1,3 @@
 require("uls.remap")
-print("hello from uls")
+require("uls.set")
 
