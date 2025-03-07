@@ -44,6 +44,11 @@ return require('packer').startup(function(use)
 		  require('lspsaga').setup({})
 	  end,
   })
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+})
+
 
 
 end)

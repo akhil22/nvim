@@ -47,7 +47,7 @@ cmp.setup({
 })
 require('lspconfig').pylsp.setup {
   --cmd = { '/home/usl/anaconda3/bin/pylsp' },
-  cmd = { '/home/usl/anaconda3/envs/qw/bin/pylsp' },
+  cmd = {"T:/lang/Scripts/pylsp.exe"},
   -- other settings...
 }
 require('lspconfig').clangd.setup({
