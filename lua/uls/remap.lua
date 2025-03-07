@@ -39,3 +39,4 @@ vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.o.scrolloff = 10
 vim.o.wrap = false
+--vim.g.codedark_transparent = 1
