@@ -37,12 +37,6 @@ return require('packer').startup(function(use)
 		  require("aerial").setup()
 	  end,
   })
-  use {
-	  'folke/zen-mode.nvim',
-	  config = function()
-		  require("zenmode")  -- Load configuration from lua/config/zen.lua
-	  end
-  }
   use ({
 	  'nvimdev/lspsaga.nvim',
 	  after = 'nvim-lspconfig',
