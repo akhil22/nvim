@@ -46,12 +46,12 @@ cmp.setup({
   mapping = cmp.mapping.preset.insert({}),
 })
 require('lspconfig').pylsp.setup {
-  --cmd = { '/home/usl/anaconda3/bin/pylsp' },
-  cmd = {"T:/lang/Scripts/pylsp.exe"},
+  cmd = { '/home/usl/anaconda3/envs/gpt/bin/pylsp' },
+ -- cmd = {"T:/lang/Scripts/pylsp.exe"},
   -- other settings...
 }
 require('lspconfig').clangd.setup({
-	cmd = {"clangd-12"},
+	cmd = {"clangd-14"},
 
 })
 vim.diagnostic.config({
