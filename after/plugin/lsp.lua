@@ -43,7 +43,18 @@ cmp.setup({
       vim.snippet.expand(args.body)
     end,
   },
-  mapping = cmp.mapping.preset.insert({}),
+ -- mapping = cmp.mapping.preset.insert({}),
+  mapping = {
+    -- Move to next item
+    ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+    -- Move to previous item
+    ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+    -- Confirm selection
+    ['<CR>']  = cmp.mapping.confirm({ select = true }),
+    -- Alternative confirm: use <Tab> for expansion or selection:
+    ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+    -- If you prefer to expand a snippet or do something else, you can configure more.
+  },
 })
 require('lspconfig').pylsp.setup {
   cmd = { '/home/usl/anaconda3/envs/gpt/bin/pylsp' },
