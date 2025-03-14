@@ -57,9 +57,24 @@ cmp.setup({
   },
 })
 require('lspconfig').pylsp.setup {
-  cmd = { '/home/usl/anaconda3/envs/gpt/bin/pylsp' },
- -- cmd = {"T:/lang/Scripts/pylsp.exe"},
-  -- other settings...
+    cmd = { '/home/usl/anaconda3/envs/gpt/bin/pylsp' },
+    settings = {
+        pylsp = {
+            plugins = {
+                -- Disable all code style checks (e.g., line length, whitespace)
+                pycodestyle = { enabled = false },
+                -- Enable pyflakes for variable-based warnings
+                pyflakes = { enabled = true },
+
+                -- Optional: disable other plugins you don’t want
+                mccabe = { enabled = false },
+                pydocstyle = { enabled = false },
+                -- ...
+            },
+        },
+    },
+    -- cmd = {"T:/lang/Scripts/pylsp.exe"},
+    -- other settings...
 }
 require('lspconfig').clangd.setup({
 	cmd = {"clangd-14"},
